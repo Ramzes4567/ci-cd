@@ -14,4 +14,4 @@ jobs:
     - name: Make script executable
       run: chmod +x ci-cd.py
     - name: Run ci-cd.py
-      run: ./ci-cd.py
+      run: python3 ci-cd.py
