@@ -1,13 +1,15 @@
 name: Build and Push Docker image
-  on:
-    push:
-      branches: [ main ]
-        pull_request:
-        branches: [ main ]
-      jobs:
-        build:
-          runs-on: ubuntu-latest
-          steps:
-          - uses: actions/checkout@v2
-          - name: Run a one-line script
-            run: test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a one-line script
+      run: test
