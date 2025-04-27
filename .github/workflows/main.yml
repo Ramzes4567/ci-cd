@@ -1,18 +1,17 @@
 name: Build and Push Docker image
-# Триггеры для запуска воркфлоу
+
 on:
-  # Запуск при пуше в ветку main
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+
 jobs:
-  # Имя задачи
   build:
-    # Тип виртуальной машины для запуска
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code
-        uses: actions/checkout@v4
-      - name: Run a one-line script
-        run: ci-cd.py
+    - uses: actions/checkout@v4
+    - name: Make script executable
+      run: chmod +x ci-cd.py
+    - name: Run ci-cd.py
+      run: ./ci-cd.py
